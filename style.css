@@ -405,8 +405,9 @@ position: fixed;
   .boton13 {
     display: flex;
     position: fixed;
+transform: translateX(-50%);
     top: 0px;
-    right: 100px;
+
     max-width: 100%;
     padding: 0 10px;
     gap: 15px;
@@ -416,7 +417,7 @@ position: fixed;
       display: flex;
     position: fixed;
     top: 0px;
-    right: 190px;
+   left: 0px;
     max-width: 100%;
     padding: 0 10px;
     gap: 15px;}
