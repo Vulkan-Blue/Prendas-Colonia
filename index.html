@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prendas Colonia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<!-- Panel de selección -->
+<div id="panel-selector" class="panel-selector oculto">
+  <label>Talla:
+    <select id="talla">
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+    </select>
+  </label>
+
+  <label>Color:
+    <select id="color">
+      <option value="Rojo">Rojo</option>
+      <option value="Azul">Azul</option>
+      <option value="Negro">Negro</option>
+    </select>
+  </label>
+
+  <label>Cantidad:
+    <input type="number" id="cantidad" min="1" value="1">
+  </label>
+
+  <button onclick="agregarAlResumen()" class="btn-confirmar">Confirmar</button>
+  <button onclick="cerrarPanel()" class="btn-cerrar">Cerrar</button>
+</div>
+
+<!-- catalogo -->
+  <div class="catalogo-container">
+     <div class="cuerpo">
+     <div class="efecto-pagina"></div>
+    <button class="nav-button izquierda" onclick="moverIzquierda()"><</button>
+<div class="efecto-pagina"></div>
+
+    <div class="catalogo">
+       
+     <img src="img/medias_antideslizantes_niños.jpg" class="item imagen-activa" alt="Imagen 1">
+
+      <img src="img/medias_deportivas.jpg" class="item" alt="Imagen 2">
+      <img src="img/medias_persial.jpg" class="item" alt="Imagen 3">
+      <!-- Agrega más imágenes aquí -->
+    </div>
+
+    <button class="nav-button derecha" onclick="moverDerecha()">></button>
+      <div class="efecto-pagina-izquierda"></div>
+</div>
+  </div>
+<!-- Botones principales -->
+ <div class="botones-column">
+<button onclick="mostrarSelector()" class="btn-agregar botones-column"><img src="img/Agragar-carrito.png" alt="" height="100px">Agregar al carrito</button>
+<button onclick="toggleCarrito()" class="btn-agregar botones-column"><img src="img/carrito.png" alt="" height="100px">Carrito</button>
+</div>
+
+
+
+<!-- Formulario de compra -->
+
+<div id="formulario-compra" class="formulario-compra oculto">
+  <h3>Finalizar compra</h3>
+
+  <label>Nombre completo:
+    <input type="text" id="nombre-cliente" placeholder="Ej: Juan Pérez" required>
+  </label>
+
+  <label>Dirección de entrega:
+    <textarea id="direccion-cliente" placeholder="Ej: Calle 123, Apto 4, Ciudad, Referencias..." required></textarea>
+  </label>
+
+  <p><strong>Fecha estimada de entrega:</strong> 23 de agosto de 2025</p>
+
+  <label>Horario preferido de entrega:
+    <select id="horario-entrega" required>
+      <option value="">Selecciona un horario</option>
+      <option value="Mañana (8:00 - 12:00)">Mañana (8:00 - 12:00)</option>
+      <option value="Tarde (13:00 - 17:00)">Tarde (13:00 - 17:00)</option>
+      <option value="Noche (18:00 - 21:00)">Noche (18:00 - 21:00)</option>
+    </select>
+  </label>
+
+  <label>Teléfono (opcional):
+    <input type="tel" id="telefono-cliente" placeholder="Ej: 099123456">
+  </label>
+
+<label for="red-envio">Enviar por:</label>
+<select id="red-envio">
+  <option value="whatsapp">WhatsApp</option>
+  <option value="telegram">Telegram</option>
+  <option value="messenger">Messenger</option>
+</select>
+
+  <button onclick="enviarCompra()" class="btn-enviar">Enviar</button>
+</div>
+
+
+
+
+
+<!-- Cartel lateral resumen -->
+<div id="resumen-carrito" class="resumen-carrito oculto">
+    <button onclick="toggleCarrito()" class="btn-agregar carbuton">Atras</button>
+   <button onclick="mostrarFormularioCompra()" class="btn-comprar carbuton">Comprar</button>
+
+
+</div>
+
+
+
+
+  <script src="script.js"></script>
+  <script src="carrito.js"></script>
+  <script src="comprar.js"></script>
+
+
+</body>
+</html>

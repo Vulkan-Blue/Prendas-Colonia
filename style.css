@@ -1,0 +1,468 @@
+body {
+  margin: 0;
+background: #d3d3d3; /* gris base */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+    overflow: hidden;
+}
+/* Pared diagonal decorativa */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 50vh;
+  background: linear-gradient(135deg, #b0b0b0 0%, #a0a0a0 100%);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+  z-index: -2;
+}
+
+/* Contorno inferior irregular */
+body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
+  height: 40vh;
+  background: linear-gradient(225deg, #c0c0c0 0%, #b0b0b0 100%);
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  z-index: -2;
+}
+
+.catalogo-container {
+  position: relative;
+ 
+  width: 60%;
+  max-width: 800px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgb(0, 0, 0);
+}
+
+.catalogo {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.item {
+  min-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.192);
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  font-size: 1.5em;
+  z-index: 1;
+}
+
+.izquierda { left: 0; }
+.derecha { right: 0; }
+
+
+.efecto-pagina {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(100%) skewX(-20deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.efecto-activo {
+  animation: slidePage 0.6s ease forwards;
+}
+
+@keyframes slidePage {
+  0% {
+    transform: translateX(100%) skewX(-20deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%) skewX(0deg);
+    opacity: 100;
+  }
+}
+/* Efecto visual que simula una hoja entrando desde la izquierda */
+.efecto-pagina-izquierda {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(-100%) skewX(20deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Clase que activa la animación */
+.efecto-activo-izquierda {
+  animation: slidePageIzquierda 0.6s ease forwards;
+}
+
+/* Animación que desliza la hoja hacia el centro */
+@keyframes slidePageIzquierda {
+  0% {
+    transform: translateX(-100%) skewX(10deg);
+    opacity: 1;
+  }
+   50% {
+    transform: translateX(50%) skewX(0deg);
+    opacity: 1;
+   }
+  100% {
+    transform: translateX(100%) skewX(0deg);
+    opacity: 1;
+  }
+}
+/* Efecto visual que simula una hoja entrando desde la izquierda */
+.efecto-pagina-izquierda-pausado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(-100%) skewX(20deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Clase que activa la animación */
+.efecto-activo-izquierda-pausado {
+  animation: slidePageIzquierdapausado 1.6s ease forwards;
+}
+
+/* Animación que desliza la hoja hacia el centro */
+@keyframes slidePageIzquierdapausado {
+  0% {
+    transform: translateX(-100%) skewX(10deg);
+    opacity: 1;
+  }
+   50% {
+    transform: translateX(50%) skewX(0deg);
+    opacity: 1;
+   }
+
+}
+.btn-agregar, .btn-confirmar {
+  padding: 0.5em 1em;
+  margin: 1em;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.panel-selector {
+    position: fixed;
+  top: 100px;
+  height: 100%;
+  left: 20;
+  width: 280px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+border: 2px solid #333;
+  border-radius: 12px;
+  padding: 1.2em;
+box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 1em;
+  color: #333;
+  z-index: 10000;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.oculto {
+  display: none;
+}
+
+
+
+.resumen-carrito {
+  position: fixed;
+  top: 20px;
+  height: 100%;
+  right: 20px;
+  width: 280px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(to bottom right, #ff5145, #ffb9b9);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.2em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 1em;
+  color: #000000;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.resumen-carrito h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
+  color: #444;
+}
+
+.carbuton {
+  display: inline-block;
+  height: 50px;
+  width: auto;
+  max-width: 100%;
+  padding: 0.5em 1em;
+  font-size: 0.95em;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 0.4em 0;
+}
+
+.btn-comprar {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-comprar:hover {
+  background-color: #218838;
+  transform: scale(1.03);
+}
+
+.btn-agregar {
+  background-color: #f30000;
+  color: white;
+}
+
+.btn-agregar:hover {
+  background-color: #0069d9;
+  transform: scale(1.03);
+}
+
+
+
+
+
+
+
+.formulario-compra {
+position: fixed;
+  top: 20px;
+  height: 100%;
+  right: 20px;
+  width: 280px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(to bottom right, #d2ffb8, #5eff14);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.2em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 1em;
+  color: #333;
+  z-index: 10000;
+  transition: all 0.3s ease;
+}
+.formulario-compra h3 {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  color: #444;
+  text-align: center;
+}
+
+.formulario-compra label {
+  display: block;
+  margin-bottom: 1em;
+  font-weight: 500;
+  color: #555;
+}
+
+.formulario-compra input,
+.formulario-compra textarea,
+.formulario-compra select {
+  width: 100%;
+  padding: 0.6em;
+  margin-top: 0.4em;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 0.95em;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.formulario-compra textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.formulario-compra p {
+  margin: 1em 0;
+  font-size: 0.95em;
+  color: #666;
+}
+
+.btn-enviar {
+  display: block;
+  width: 100%;
+  padding: 0.7em;
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-enviar:hover {
+  background-color: #218838;
+  transform: scale(1.03);
+}
+.formulario-compra label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formulario-compra textarea {
+  width: 100%;
+  height: 80px;
+}
+.botones-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre botones */
+  align-items: stretch; /* Que ocupen el mismo ancho */
+  max-width: 300px; /* Opcional: limitar ancho */
+  margin: 0px; /* Centrar horizontalmente */
+  margin-top: 0px;
+}
+
+.btn-agregar {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #008cff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #02afff;
+}
+@media (max-width: 800px) {
+  .botones-column {
+    max-width: 100%;
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .btn-agregar {
+    font-size: 14px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .btn-agregar img {
+    height: 60px;
+  }
+}
+@media (max-width: 500px) {
+  .botones-column {
+    max-width: 70%;
+    padding: 0 10px;
+    gap: 15px;
+  }
+
+  .btn-agregar {
+    font-size: 7px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .btn-agregar img {
+    height: 40px;
+  }
+}
+@media (max-width: 700px) {
+  .nav-button {
+    font-size: 1em;
+    padding: 0.5em;
+  }
+}
+.panel-selector {
+height: 300px;
+  position: fixed;
+margin-top: -100px;
+right: -80px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  padding: 1em;
+
+  
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.panel-selector.oculto {
+  transform: translateY(100%);
+}
+
+.panel-selector label {
+  margin: 0.5em;
+  font-weight: bold;
+}
+
+.panel-selector select,
+.panel-selector input {
+  margin-left: 0.5em;
+  padding: 0.3em;
+}
+
+.btn-confirmar,
+.btn-cerrar {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.6em 1em;
+  margin: 0.5em;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+.btn-cerrar {
+  background-color: #c00;
+}
