@@ -352,7 +352,7 @@ position: fixed;
 .btn-agregar:hover {
   background-color: #02afff;
 }
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   .boton12 {
     display: flex;
     position: fixed;
@@ -391,12 +391,8 @@ position: fixed;
     top: 100px;
   }
 }
-@media (max-width: 800px) {
-  .botones-column {
-    max-width: 70%;
-    padding: 0 10px;
-    gap: 15px;
-  }
+@media (max-width: 900px) {
+
 
   .btn-agregar {
     font-size: 7px;
