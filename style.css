@@ -5,7 +5,7 @@ background: #ffffff; /* gris base */
   justify-content: center;
   align-items: center;
   height: 100vh;
-    overflow: hidden;
+overflow: hidden;
 }
 
 
@@ -149,10 +149,12 @@ background: #ffffff; /* gris base */
 
 .panel-selector {
     position: fixed;
+    
   top: 100px;
   height: 100%;
-  left: 20;
-  width: 280px;
+
+  width: 200px;
+    
   max-height: 90vh;
   overflow-y: auto;
   background: #fff;
@@ -350,8 +352,21 @@ position: fixed;
 .btn-agregar:hover {
   background-color: #02afff;
 }
-@media (max-width: 800px) {
-  .botones-column {
+@media (max-width: 500px) {
+  .boton12 {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    max-width: 100%;
+    padding: 0 10px;
+    gap: 15px;
+  }
+  .boton13 {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    right: 100px;
     max-width: 100%;
     padding: 0 10px;
     gap: 15px;
@@ -370,7 +385,7 @@ position: fixed;
     height: 60px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .botones-column {
     max-width: 70%;
     padding: 0 10px;
