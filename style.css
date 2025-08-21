@@ -384,6 +384,12 @@ position: fixed;
   .btn-agregar img {
     height: 60px;
   }
+  .catalogo-container{
+    width: 100%;
+    max-width: 1000px;
+    position: fixed;
+    top: 100px;
+  }
 }
 @media (max-width: 800px) {
   .botones-column {
@@ -404,6 +410,7 @@ position: fixed;
   .btn-agregar img {
     height: 40px;
   }
+  
 }
 @media (max-width: 700px) {
   .nav-button {
