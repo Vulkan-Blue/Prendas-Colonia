@@ -44,10 +44,24 @@
 
     <div class="catalogo">
        
-     <img src="img/medias_antideslizantes_niños.jpg" class="item imagen-activa" alt="Imagen 1">
+     <img src="img/medias_antideslizantes_niños.jpg" class="item imagen-activa medias" alt="Imagen 1">
 
-      <img src="img/medias_deportivas.jpg" class="item" alt="Imagen 2">
-      <img src="img/medias_persial.jpg" class="item" alt="Imagen 3">
+      <img src="img/medias_deportivas.jpg" class="item medias" alt="Imagen 2">
+      <img src="img/medias_persial.jpg" class="item medias" alt="Imagen 3">
+      <img src="img/bombachas_en_microfibrillas.jpg" class="item bombachas" alt="Imagen 3">
+      <img src="img/colales.jpg" class="item bombachas" alt="Imagen 3">
+      <img src="img/boxer_en_microfibrilla.jpg" class="item bombachas" alt="Imagen 3">
+
+
+      <img src="img/guantes_termicos_camuflados.jpg" class="item guantes" alt="Imagen 3">
+      <img src="img/guantes_termicos_manga_larga.jpg" class="item guantes" alt="Imagen 3">
+      <img src="img/Guantes_termicos_manga_corta.jpg" class="item guantes" alt="Imagen 3">
+
+      <img src="img/repasadores.jpg" class="item pantalones" alt="Imagen 3">
+      <img src="img/bombachas_en_microfibrillas.jpg" class="item camperas" alt="Imagen 3">
+
+
+
       <!-- Agrega más imágenes aquí -->
     </div>
 
@@ -59,6 +73,7 @@
  <div class="botones-column">
 <button onclick="mostrarSelector()" class="btn-agregar botones-column boton12"><img src="img/Agragar-carrito.png" alt="" height="100px">Agregar al carrito</button>
 <button onclick="toggleCarrito()" class="btn-agregar botones-column boton13"><img src="img/carrito.png" alt="" height="100px">Carrito</button>
+<button onclick="mostrarFiltros()" class="btn-filtro btn-agregar botones-column boton14"><img src="img/carrito.png" alt="" height="100px">Filtrar artículos</button>
 </div>
 
 
@@ -81,9 +96,9 @@
   <label>Horario preferido de entrega:
     <select id="horario-entrega" required>
       <option value="">Selecciona un horario</option>
-      <option value="Mañana (8:00 - 12:00)">Mañana (8:00 - 12:00)</option>
-      <option value="Tarde (13:00 - 17:00)">Tarde (13:00 - 17:00)</option>
-      <option value="Noche (18:00 - 21:00)">Noche (18:00 - 21:00)</option>
+      <option value="Mañana (8:00 - 12:00)">Mañana (No disponible)</option>
+      <option value="Tarde (13:00 - 17:00)">Tarde (13:00 - 15:00)</option>
+      <option value="Noche (18:00 - 21:00)">Noche (21:00 - 24:00)</option>
     </select>
   </label>
 
@@ -102,6 +117,17 @@
 </div>
 
 
+<!-- filtros -->
+<div id="panel-filtros" class="panel-filtros oculto">
+  <button  onclick="filtrarPor('medias')">Medias</button>
+  <button onclick="filtrarPor('guantes')">Guantes</button>
+  <button onclick="filtrarPor('bombachas')">Bombachas</button>
+  <button onclick="filtrarPor('pantalones')">Pantalones</button>
+  <button onclick="filtrarPor('camperas')">Camperas</button>
+  <button onclick="filtrarPor('todos')">Ver todos</button>
+  <button class="cerrarfiltro" onclick="cerrarFiltros()">Cerrar</button>
+</div>
+
 
 
 
@@ -119,6 +145,8 @@
   <script src="script.js"></script>
   <script src="carrito.js"></script>
   <script src="comprar.js"></script>
+  <script src="filtro.js"></script>
+
 
 
 </body>
