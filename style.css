@@ -7,31 +7,7 @@ background: #d3d3d3; /* gris base */
   height: 100vh;
     overflow: hidden;
 }
-/* Pared diagonal decorativa */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -10%;
-  width: 120%;
-  height: 50vh;
-  background: linear-gradient(135deg, #b0b0b0 0%, #a0a0a0 100%);
-  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
-  z-index: -2;
-}
 
-/* Contorno inferior irregular */
-body::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: -10%;
-  width: 120%;
-  height: 40vh;
-  background: linear-gradient(225deg, #c0c0c0 0%, #b0b0b0 100%);
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-  z-index: -2;
-}
 
 .catalogo-container {
   position: relative;
