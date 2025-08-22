@@ -398,16 +398,18 @@ position: fixed;
     position: fixed;
     top: 0px;
     right: 0px;
+    width: 75px;
     max-width: 100%;
+ 
     padding: 0 10px;
     gap: 15px;
   }
   .boton13 {
     display: flex;
     position: fixed;
-transform: translateX(-50%);
+right: 40%;
     top: 0px;
-
+ width: 75px;
     max-width: 100%;
     padding: 0 10px;
     gap: 15px;
@@ -418,6 +420,7 @@ transform: translateX(-50%);
     position: fixed;
     top: 0px;
    left: 0px;
+    width: 75px;
     max-width: 100%;
     padding: 0 10px;
     gap: 15px;}
@@ -515,4 +518,29 @@ right: -80px;
 }
 .cerrarfiltro{
     background-color: red;
+}
+.mensaje {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  font-size: 1.5em;
+  text-align: center;
+  width: 100%;
+}
+.mensaje.visible {
+  opacity: 1;
+}
+.mensajes_fondo{
+  position: fixed;
+  top: 550px;
+  width: 100%;
+
+}
+@media (max-width: 500px){
+ .mensajes_fondo{
+  position: fixed;
+  top: 550px;
+  width: 100%;
+
+}
 }
